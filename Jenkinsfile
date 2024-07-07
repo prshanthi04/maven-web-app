@@ -1,17 +1,15 @@
 pipeline {
   
-    agent {
-        label 'Ansible-Node'
-    }
-    
+    agent any
+  
     tools{
-        maven "Maven-3.9.6"
+        maven "Maven-3.9.8"
     }
 
     stages {
         stage('Clone') {
             steps {
-               git 'https://github.com/ashokitschool/maven-web-app.git'
+               git 'https://github.com/prshanthi04/maven-web-app.git'
             }
         }
         stage('Build') {
@@ -23,9 +21,7 @@ pipeline {
         stage('Create Image'){
             steps{
                steps {
-                	script {
-                		sh 'ansible-playbook task.yml'
-                	}
+                	
                 }
             }
         }
