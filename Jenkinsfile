@@ -14,12 +14,6 @@ pipeline {
             }
         }
         
-        stage('Create Image'){
-            steps{
-               steps {
-                	
-                }
-            }
+      
         }
     }
-}
