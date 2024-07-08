@@ -25,8 +25,6 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh "docker stop my-running-container"
-                    sh "docker rm my-running-container"
                     sh "docker run -d --name $CONTAINER_NAME -p 9090:8080 $IMAGE_NAME"
                 }
             }
